@@ -23,7 +23,7 @@ formRef.addEventListener("input", () => {
 
   formRef.addEventListener("submit", (event) => {
     event.preventDefault();
-    for (i = 0; i <= amount; i += 1) {
+    for (let i = 0; i <= amount; i += 1) {
       console.log(delay, step, amount);
       createPromise(i, delay).then(({ position, delay }) => {
         console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
