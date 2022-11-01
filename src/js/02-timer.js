@@ -52,7 +52,7 @@ const options = {
                     dateValueRef[1].textContent = addLeadingZero(timer.hours);
                     dateValueRef[2].textContent = addLeadingZero(timer.minutes);
                     dateValueRef[3].textContent = addLeadingZero(timer.seconds);
-                    if (timer.days == 0 && timer.hours == 0 && timer.minutes == 0 && timer.seconds === 0) {
+                    if (timer.days === 0 && timer.hours === 0 && timer.minutes === 0 && timer.seconds === 0) {
                         clearInterval(interval);
                     };
                 }, 1000);
