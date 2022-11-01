@@ -9,9 +9,9 @@ function createPromise(position, delay) {
   setTimeout(() => {
     const shouldResolve = Math.random() > 0.3;
     if (shouldResolve) {
-      Promise.resolve({ position, delay });
+      return Promise.resolve({ position, delay });
     } else {
-      Promise.reject({ position, delay });
+      return Promise.reject({ position, delay });
     }
   }, delay);
 };
@@ -23,7 +23,7 @@ formRef.addEventListener("input", () => {
 
   formRef.addEventListener("submit", (event) => {
     event.preventDefault();
-    for (let i = 0; i <= amount; i += 1) {
+    for (let i = 0; i <= amount - 1; i += 1) {
       console.log(delay, step, amount);
       createPromise(i, delay).then(({ position, delay }) => {
         console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
